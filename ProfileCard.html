@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Profile Card</title>
+
+    <style>
+      .profile-card {
+        width: 300px;
+        padding: 20px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        text-align: center;
+        margin: 50px auto;
+        transition: all 0.3s;
+      }
+      .profile-card h2 {
+        color: #333;
+        margin: 10px 0;
+      }
+      .profile-card p {
+        color: #666;
+        line-height: 1.5;
+      }
+      button {
+        padding: 8px 16px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: #afc6db;
+        border-color: #7db5ea;
+        box-shadow: 0 10px 15px rgba(170, 155, 155, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="profile" class="profile-card">
+      <img src="https://placehold.co/300x250?text=Hello+World" alt="" />
+      <h2 id="name">John Doe</h2>
+      <p id="title">Web Developer</p>
+      <p id="description">Passionate about coding and teaching</p>
+      <div class="buttons">
+        <button id="toggleBtn">Toggle Card</button>
+        <button id="updateBtn">Update Info</button>
+        <button id="themeBtn">Change Theme</button>
+      </div>
+    </div>
+
+    <script>
+      // Get all elements
+      const profileCard = document.getElementById("profile");
+      const nameElement = document.getElementById("name");
+      const titleElement = document.getElementById("title");
+      const descElement = document.getElementById("description");
+
+      const toggleBtn = document.getElementById("toggleBtn");
+      const updateBtn = document.getElementById("updateBtn");
+      const themeBtn = document.getElementById("themeBtn");
+
+      // Toggle active state
+      toggleBtn.addEventListener("click", function () {
+        profileCard.classList.toggle("active");
+        toggleBtn.textContent = profileCard.classList.contains("active")
+          ? "Deactive Card"
+          : "Active Card";
+      });
+
+      // Update Information
+      updateBtn.addEventListener("click", function () {
+        const newName = prompt("Enter New Name:", nameElement.textContent);
+        const newTitle = prompt("Enter new title:", titleElement.textContent);
+        const newDesc = prompt(
+          "Enter new description",
+          descElement.textContent,
+        );
+
+        if (newName) nameElement.textContent = newName;
+        if (newTitle) titleElement.textContent = newTitle;
+        if (newDesc) descElement.textContent = newDesc;
+      });
+
+      // Change Theme
+      themeBtn.addEventListener("click", function () {
+        const colors = [
+          "#FF5733", // red-orange
+          "#33FF57", // green
+          "#3357FF", // blue
+          "#FFC300", // yellow
+          "#8E44AD", // purple
+          "#E74C3C", // red
+          "#1ABC9C", // teal
+          "#2C3E50", // dark blue
+          "#F39C12", // orange
+          "#ECF0F1", // light gray
+        ];
+
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        profileCard.style.backgroundColor = randomColor;
+      });
+    </script>
+  </body>
+</html>
