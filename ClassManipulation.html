@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Intorduction</title>
+    <style>
+      .title {
+        border-radius: 15px;
+      }
+      #btn {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis
+      temporibus magni ut qui eveniet ad mollitia distinctio numquam eligendi?
+      Necessitatibus nulla atque provident corporis cupiditate quam sapiente
+      eum, nisi autem?
+    </div>
+
+    <div class="red">Lorem ipsum dolor sit amet.</div>
+
+    <script>
+      //   <!-- Class Manipulation -->
+
+      const element = document.querySelector(".box");
+      console.log(element);
+      //Add class
+      element.classList.add("active", "highlight");
+
+      //   Remove class
+      element.classList.remove("highlight");
+
+      // Replace class
+      element.classList.replace("active", "hiddne");
+
+      //   Style Manipulation
+      element.style.backgroundColor = "blue";
+      element.style.color = "white";
+      element.style.borderRadius = "10px";
+      element.style.padding = "20px";
+
+      // Multiple Styles at once
+      const redDiv = document.querySelector(".red");
+      Object.assign(redDiv.style, {
+        backgroundColor: "red",
+        fontSize: "24px",
+        marginTop: "20px",
+        border: "10px",
+      });
+    </script>
+  </body>
+</html>

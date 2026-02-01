@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Maniulation</title>
+    <style></style>
+  </head>
+  <body>
+    <a href="">Home</a>
+
+    <script>
+      const link = document.querySelector("a");
+
+      //   Get attribute
+      const href = link.getAttribute("href");
+      console.log(href);
+
+      //   Set attribute
+      link.setAttribute("href", "https://google.com");
+      link.setAttribute("target", "_blank");
+      link.setAttribute("data-id", "1234a");
+
+      //   Remove attribute
+      link.removeAttribute("target");
+    </script>
+  </body>
+</html>

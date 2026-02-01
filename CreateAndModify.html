@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating And Modifying Elements</title>
+  </head>
+  <body>
+    <script>
+      // Create Element
+      const newDiv = document.createElement("div");
+      const newPara = document.createElement("p");
+      const newButton = document.createElement("button");
+
+      // Add Content and attributes
+      newDiv.textContent = "New Div";
+      newPara.textContent = "This is a paragraph";
+      newButton.textContent = "Click";
+
+      // Append to the body (or any container)
+      document.body.appendChild(newDiv);
+      document.body.appendChild(newPara);
+      document.body.appendChild(newButton);
+    </script>
+  </body>
+</html>

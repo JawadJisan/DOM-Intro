@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Intorduction</title>
+    <style>
+      .title {
+      }
+      #btn {
+      }
+    </style>
+  </head>
+  <body>
+    <p class="dom" id="dom">DOM -> Document Object Model</p>
+    <!-- DOM Element -->
+    <button>Click Me</button>
+
+    <!-- 
+    Selecting DOM Elements
+    1. getElementById()
+    2. querySelector() -> Select First Element
+    3. querySelectorAll() -> Select Multiple Elements
+    4. getElementsByClassName() 
+    -->
+
+    <div
+      style="
+        border: 1px solid black;
+        padding: 20px;
+        background: greenyellow;
+        margin-top: 20px;
+      "
+      id="container"
+    >
+      <h1 class="title">DOM Practice</h1>
+      <p class="desc">First Paragraph</p>
+      <p class="desc">Second Paragraph</p>
+      <button id="btn">Click Me</button>
+      <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+      </ul>
+    </div>
+
+    <!-- DOM Manipulation -->
+
+    <script>
+      // Select h1 by class
+      const title = document.querySelector(".title");
+      console.log(title);
+
+      //   Select all paragraph
+      //   const paragraph = document.querySelectorAll("p");
+      const paragraph = document.querySelectorAll(".desc");
+      console.log(paragraph);
+
+      //   Select button by ID
+      const button = document.getElementById("btn");
+      console.log(button);
+
+      //   Select all list items
+      const items = document.querySelectorAll(".item");
+
+      //   DOM Manipulation
+      const div = document.querySelector("#container");
+      console.log(div);
+      div.innerHTML = "<strong>Bold Text</strong> and Normal Text";
+
+      const para = document.querySelector("p");
+      console.log(para);
+      console.log(para.textContent);
+      para.textContent = "New Text Content"
+    </script>
+  </body>
+</html>
